@@ -29,7 +29,7 @@ function setColor(temp) {
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
       if (temp[i][j] == true) {
-        arr[i][j].style.color = "#DC3545";
+        arr[i][j].style.color = "black";
       }
     }
   }
@@ -38,7 +38,7 @@ function setColor(temp) {
 function resetColor() {
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
-      arr[i][j].style.color = "green";
+      arr[i][j].style.color = "blue";
     }
   }
 }
@@ -48,7 +48,7 @@ var board = [[], [], [], [], [], [], [], [], []];
 let button = document.getElementById("generate-sudoku");
 let solve = document.getElementById("solve");
 
-console.log(arr);
+// console.log(arr);
 function changeBoard(board) {
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
@@ -77,7 +77,7 @@ button.onclick = function () {
   xhrRequest.send();
 };
 
-//to be completed by student
+//driver
 function isPossible(board, sr, sc, val) {
   for (var row = 0; row < 9; row++) {
     if (board[row][sc] == val) {
@@ -103,8 +103,7 @@ function isPossible(board, sr, sc, val) {
   }
   return true;
 }
-
-//to be completed by student
+//helper function
 function solveSudokuHelper(board, sr, sc) {
   if (sr == 9) {
     changeBoard(board);
